@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpadesGroceryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeliverySchedule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="DeliveryMan_ID" Type="Int32" Nullable="false" />
+    <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DeliveryDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Salary" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+    <Property Name="Ordered_Products_ID" Type="Int32" Nullable="false" />
+    <Property Name="Payment" Type="Int32" Nullable="false" />
+    <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ordered_Products">
+    <Key>
+      <PropertyRef Name="Ordered_Products_ID" />
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Ordered_Products_ID" Type="Int32" Nullable="false" />
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Subtotal" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="Vendor_ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReturnRefund">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="Issue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReviewRating">
+    <Key>
+      <PropertyRef Name="Review_ID" />
+    </Key>
+    <Property Name="Review_ID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="Review" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="Vendor_ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="TIN" />
+      <PropertyRef Name="Product_List_ID" />
+    </Key>
+    <Property Name="Vendor_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIN" Type="Int32" Nullable="false" />
+    <Property Name="Product_List_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Product_List_ID" />
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Product_List_ID" Type="Int32" Nullable="false" />
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SpadesGroceryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="DeliverySchedules" EntityType="Self.DeliverySchedule" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Ordered_Products" EntityType="Self.Ordered_Products" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ReturnRefunds" EntityType="Self.ReturnRefund" />
+    <EntitySet Name="ReviewRatings" EntityType="Self.ReviewRating" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendor" />
+    <EntitySet Name="VendorProducts" EntityType="Self.VendorProduct" />
+  </EntityContainer>
+</Schema>

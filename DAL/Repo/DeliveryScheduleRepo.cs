@@ -10,29 +10,45 @@ namespace DAL.Repo
 {
     internal class DeliveryScheduleRepo : ISalesRepo<DeliverySchedule, int, DeliverySchedule>
     {
+        SpadesGroceryEntities db;
+        public DeliveryScheduleRepo(SpadesGroceryEntities db)
+        {
+            this.db = db;
+        }
         public DeliverySchedule Create(DeliverySchedule obj)
         {
-            throw new NotImplementedException();
+            var data = db.DeliverySchedules.Add(obj);
+            db.SaveChanges();
+            return data;
         }
 
-        public DeliverySchedule Delete(DeliverySchedule obj)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            db.DeliverySchedules.Remove(GetById(id));
+            db.SaveChanges();
+            return true;
         }
 
         public List<DeliverySchedule> GetAll()
         {
-            throw new NotImplementedException();
+            return db.DeliverySchedules.ToList();
         }
 
         public DeliverySchedule GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.DeliverySchedules.SingleOrDefault(x => x.ID == id);
         }
 
-        public DeliverySchedule Update(DeliverySchedule obj)
+        public bool Update(DeliverySchedule obj)
         {
-            throw new NotImplementedException();
+            var old = db.DeliverySchedules.FirstOrDefault(x=>x.ID == obj.ID);
+            if(old != null)
+            {
+                db.Entry(old).CurrentValues.SetValues(obj);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

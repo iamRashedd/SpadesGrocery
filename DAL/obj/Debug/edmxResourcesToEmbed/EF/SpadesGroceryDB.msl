@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpadesGroceryModelStoreContainer" CdmEntityContainer="SpadesGroceryEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliverySchedules">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.DeliverySchedule">
+        <MappingFragment StoreEntitySet="DeliverySchedule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="DeliveryMan_ID" ColumnName="DeliveryMan_ID" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Ordered_Products_ID" ColumnName="Ordered_Products_ID" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordered_Products">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.Ordered_Products">
+        <MappingFragment StoreEntitySet="Ordered_Products">
+          <ScalarProperty Name="Ordered_Products_ID" ColumnName="Ordered_Products_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Vendor_ID" ColumnName="Vendor_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReturnRefunds">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.ReturnRefund">
+        <MappingFragment StoreEntitySet="ReturnRefund">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewRatings">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.ReviewRating">
+        <MappingFragment StoreEntitySet="ReviewRating">
+          <ScalarProperty Name="Review_ID" ColumnName="Review_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="Vendor_ID" ColumnName="Vendor_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="TIN" ColumnName="TIN" />
+          <ScalarProperty Name="Product_List_ID" ColumnName="Product_List_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorProducts">
+      <EntityTypeMapping TypeName="SpadesGroceryModel.VendorProduct">
+        <MappingFragment StoreEntitySet="VendorProducts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Product_List_ID" ColumnName="Product_List_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

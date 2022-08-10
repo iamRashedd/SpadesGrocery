@@ -10,29 +10,50 @@ namespace DAL.Repo
 {
     internal class OrderRepo : ISalesRepo<Order, int, Order>
     {
-        public Order Create(Order obj)
+        SpadesGroceryEntities db;
+        public OrderRepo(SpadesGroceryEntities db)
         {
-            throw new NotImplementedException();
+            this.db = db;
         }
 
-        public Order Delete(Order obj)
+        public Order Create(Order obj) 
         {
-            throw new NotImplementedException();
+           db.Orders.Add(obj);
+           var result = db.SaveChanges();
+            if(result != 0)
+            {
+                return obj;
+            }
+            return null;
+        }
+
+        public bool Delete(int id)
+        {
+            db.Orders.Remove(GetById(id));
+            db.SaveChanges();
+            return true;
         }
 
         public List<Order> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Orders.ToList();
         }
 
         public Order GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Orders.SingleOrDefault(o => o.Order_ID == id);
         }
 
-        public Order Update(Order obj)
+        public bool Update(Order obj)
         {
-            throw new NotImplementedException();
+            var old = db.Orders.FirstOrDefault(x => x.Order_ID == obj.Order_ID);
+            if(old != null)
+            {
+                db.Entry(old).CurrentValues.SetValues(obj);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

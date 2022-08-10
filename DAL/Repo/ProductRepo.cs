@@ -10,29 +10,43 @@ namespace DAL.Repo
 {
     internal class ProductRepo : ISalesRepo<Product, int, Product>
     {
+        SpadesGroceryEntities db;
+        public ProductRepo(SpadesGroceryEntities db)
+        {
+            this.db = db;
+        }
         public Product Create(Product obj)
         {
-            throw new NotImplementedException();
+            return db.Products.Add(obj);
         }
 
-        public Product Delete(Product obj)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            db.Products.Remove(GetById(id));
+            db.SaveChanges();
+            return true;
         }
 
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Products.ToList();
         }
 
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Products.SingleOrDefault(x => x.Product_ID == id);
         }
 
-        public Product Update(Product obj)
+        public bool Update(Product obj)
         {
-            throw new NotImplementedException();
+            var old = db.Products.FirstOrDefault(x => x.Product_ID == obj.Product_ID);
+            if(old != null)
+            {
+                db.Entry(old).CurrentValues.SetValues(obj);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

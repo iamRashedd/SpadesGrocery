@@ -1,0 +1,14 @@
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\BLL.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\BLL.pdb
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\DAL.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\Entities.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\EntityFramework.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\DAL.pdb
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\DAL.dll.config
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\Entities.pdb
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\EntityFramework.xml
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.pdb

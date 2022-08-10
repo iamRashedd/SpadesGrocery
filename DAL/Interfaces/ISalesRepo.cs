@@ -12,8 +12,8 @@ namespace DAL.Interfaces
         CLASS GetById(ID id);
 
         RT Create(CLASS obj);
-        CLASS Update(CLASS obj);
-        CLASS Delete(CLASS obj);
+        bool Update(CLASS obj);
+        bool Delete(ID id);
 
     }
 }
