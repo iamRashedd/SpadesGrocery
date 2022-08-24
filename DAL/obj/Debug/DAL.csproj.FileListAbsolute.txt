@@ -10,3 +10,12 @@ D:\Programming\C#\Advanced\SpadesGrocery\DAL\obj\Debug\DAL.csproj.CoreCompileInp
 D:\Programming\C#\Advanced\SpadesGrocery\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Programming\C#\Advanced\SpadesGrocery\DAL\obj\Debug\DAL.dll
 D:\Programming\C#\Advanced\SpadesGrocery\DAL\obj\Debug\DAL.pdb
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Net.Http.Formatting.dll
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Web.Cors.dll
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Web.Http.Cors.dll
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Web.Http.dll
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Net.Http.Formatting.xml
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Web.Http.xml
+D:\Programming\C#\Advanced\SpadesGrocery\DAL\bin\Debug\System.Web.Http.Cors.xml

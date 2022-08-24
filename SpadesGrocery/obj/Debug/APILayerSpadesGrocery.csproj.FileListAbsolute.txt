@@ -76,3 +76,6 @@ D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\obj\Debug\SpadesGrocery.d
 D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\obj\Debug\SpadesGrocery.pdb
 D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\bin\EntityFramework.SqlServer.dll
 D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\bin\EntityFramework.SqlServer.xml
+D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\bin\System.Web.Cors.dll
+D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\bin\System.Web.Http.Cors.dll
+D:\Programming\C#\Advanced\SpadesGrocery\SpadesGrocery\bin\System.Web.Http.Cors.xml

@@ -12,3 +12,12 @@ D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.csproj.CoreCompileInp
 D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.dll
 D:\Programming\C#\Advanced\SpadesGrocery\BLL\obj\Debug\BLL.pdb
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Net.Http.Formatting.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Web.Cors.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Web.Http.Cors.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Web.Http.dll
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Net.Http.Formatting.xml
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Web.Http.xml
+D:\Programming\C#\Advanced\SpadesGrocery\BLL\bin\Debug\System.Web.Http.Cors.xml

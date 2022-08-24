@@ -21,5 +21,9 @@ namespace DAL.EF
         public int Payment { get; set; }
         public System.DateTime Order_Date { get; set; }
         public string Status { get; set; }
+    
+        public virtual Customer Customer { get; set; }
+        public virtual Order Order1 { get; set; }
+        public virtual Order Order2 { get; set; }
     }
 }

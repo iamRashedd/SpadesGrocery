@@ -60,6 +60,21 @@ namespace BLL.Services
             };
             return product;
         }
+        public static List<ProductModel> FilterByName(string id)
+        {
+            var data = GetAll().Where(x => x.Name.Equals(id)).ToList();
+            return data;
+        }
+        public static List<ProductModel> FilterByRating(int id)
+        {
+            var data = GetAll().Where(x=>x.Rating==id).ToList();
+            return data;
+        }
+        public static List<ProductModel> FilterByPrice(int id)
+        {
+            var data = GetAll().Where(x => x.Price <= id).ToList();
+            return data;
+        }
         public static bool Update(ProductModel p)
         {
             var data = new Product()

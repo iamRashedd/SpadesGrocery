@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SpadesGrocery.Controllers
 {
+    [EnableCors("*","*","*")]
     public class DeliveryScheduleController : ApiController
     {
         [Route("api/delivery/")]
@@ -43,7 +45,7 @@ namespace SpadesGrocery.Controllers
             if (data)
             {
                 Redirect("api/delivery");
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, new { msg="OK",data=data});
             }
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }

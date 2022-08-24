@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../../content/salesEx.css">
+</head>
+<body style="background-image: url('back.jpg');">
+
+<div>
+  <h1 align="center" >Products</h1>
+
+    <table border="1" class="table" align="center" width="80%">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Vendor</th>
+        <th>Description</th>
+      </tr>
+      <tr ng-repeat="p in products">
+          <td>{{p.Product_ID}}</td>
+          <td>{{p.Name}}</td>
+          <td>{{p.Quantity}}</td>
+          <td>{{p.Price}}</td>
+          <td>{{p.Rating}}</td>
+          <td>{{p.Vendor_ID}}</td>
+          <td>{{p.Description}}</td>
+      </tr>
+    </table>
+  </div>
+    <div class="container">
+      <div align="center">
+
+        <p align="center">
+          <h3 align="center">Filter By Name</h3>
+          <input type="text" ng-model="name">
+          <button ng-click="filtername()" class="buttons">Filter</button>
+
+          <h3 align="center">Filter By Price</h3>
+          <button ng-click="filterprice1()" class="buttons">0-100</button>
+          <button ng-click="filterprice2()" class="buttons">0-300</button>   
+          <button ng-click="filterPrice3()" class="buttons">0-500</button>
+          
+          <h3 align="center">Filter By Rating</h3>
+          <button ng-click="filterrating1()" class="buttons">3*</button>
+          <button ng-click="filterrating2()" class="buttons">4*</button>   
+          <button ng-click="filterrating3()" class="buttons">5*</button>
+        </p>
+      </div>
+    </div>
+</body>
+</html>

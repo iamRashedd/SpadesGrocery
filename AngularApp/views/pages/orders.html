@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../content/salesEx.css">
+    </head>
+    <body style="background-image: url('back.jpg');">
+
+        
+        <div>
+            <h1 align="center">Orders</h1>
+  
+      <table border="1" class="table" align="center" width="80%">
+        <tr>
+          <th>Order ID</th>
+          <th>Customer ID</th>
+          <th>Employee ID</th>
+          <th>Ordered Products</th>
+          <th>Payment</th>
+          <th>Order Date</th>
+          <th>Status</th>
+          <th colspan="4">Actions</th>
+        </tr>
+        <tr ng-repeat="o in orders">
+            <td>{{o.Order_ID}}</td>
+            <td>{{o.Customer_ID}}</td>
+            <td>{{o.Employee_ID}}</td>
+            <td>{{o.Ordered_Products_ID}}</td>
+            <td>{{o.Payment}}</td>
+            <td>{{o.Order_Date}}</td>
+            <td>{{o.Status}}</td>
+            
+            <td><button type="buttosn" class="buttons" ng-model="id = {{o.Order_ID}}" id="textBlack" ng-click="details()" >Details</button></td>
+            <td><button class="buttons" ng-model="id" id="textBlue" ng-click="approve()">Approve</button></td>
+            <td><button type="buttons" class="buttons" ng-model="id" id="textOrange" ng-click="cancel()" >Cancel</button></td>
+            <td><button type="buttons" class="buttons" ng-model="id" id="textRed" ng-click="remove()">Remove</button></td>
+            
+        </tr>
+      </table>
+      <div class="container">
+        <div class="center">
+
+          <p align="center">
+            
+            <h3 align="center">Filter By</h3>
+            <button ng-click="allorders()" class="buttons">All Orders</button>
+            <button ng-click="allapproved()" class="buttons">Approved Orders</button>   
+            <button ng-click="allcanceled()" class="buttons">Canceled Orders</button>
+          </p>
+        </div>
+      </div>
+  </div>
+    </body>
+  
+</html>

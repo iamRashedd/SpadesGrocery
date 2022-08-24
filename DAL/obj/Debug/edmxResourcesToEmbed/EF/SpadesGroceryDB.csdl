@@ -9,6 +9,7 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="SpadesGroceryModel.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
   </EntityType>
   <EntityType Name="DeliverySchedule">
     <Key>
@@ -48,6 +49,9 @@
     <Property Name="Payment" Type="Int32" Nullable="false" />
     <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="SpadesGroceryModel.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="Order1" Relationship="SpadesGroceryModel.FK_Order_Order" FromRole="Order" ToRole="Order1" />
+    <NavigationProperty Name="Order2" Relationship="SpadesGroceryModel.FK_Order_Order" FromRole="Order1" ToRole="Order" />
   </EntityType>
   <EntityType Name="Ordered_Products">
     <Key>
@@ -127,5 +131,51 @@
     <EntitySet Name="ReviewRatings" EntityType="Self.ReviewRating" />
     <EntitySet Name="Vendors" EntityType="Self.Vendor" />
     <EntitySet Name="VendorProducts" EntityType="Self.VendorProduct" />
+    <EntitySet Name="Tokens" EntityType="SpadesGroceryModel.Token" />
+    <AssociationSet Name="FK_Order_Customer" Association="SpadesGroceryModel.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Order" Association="SpadesGroceryModel.FK_Order_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order1" EntitySet="Orders" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Token1" />
+      <PropertyRef Name="CreatedAt" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Token1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ExpiredAt" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_Order_Customer">
+    <End Type="SpadesGroceryModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="SpadesGroceryModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Order">
+    <End Type="SpadesGroceryModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="SpadesGroceryModel.Order" Role="Order1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Order1">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

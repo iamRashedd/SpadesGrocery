@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../content/salesEx.css">
+    </head>
+    <body style="background-image: url('back.jpg');">
+
+        
+        <div>
+            <h1 align="center">Delivery</h1>
+  
+      <table border="1" class="table" align="center" width="80%">
+        <tr>
+          <th>Delivery ID</th>
+          <th>Order ID</th>
+          <th>DeliveryMan ID</th>
+          <th>Purchase Date</th>
+          <th>Delivery Date</th>
+          <th>Address</th>
+          <th>Status</th>
+          <th colspan="4">Actions</th>
+        </tr>
+        <tr ng-repeat="d in delivery">
+            <td>{{d.ID}}</td>
+            <td>{{d.Order_ID}}</td>
+            <td>{{d.DeliveryMan_ID}}</td>
+            <td>{{d.PurchaseDate}}</td>
+            <td>{{d.DeliveryDate}}</td>
+            <td>{{d.Address}}</td>
+            <td>{{d.Status}}</td>
+            
+            <td><button type="button" class="buttons" ng-model="" id="textBlack" ng-click="details()" >Details</button></td>
+            <td><button class="buttons" ng-model="id" id="textBlue" ng-click="approve()">Approve</button></td>
+            <td><button type="button" class="buttons" ng-model="id" id="textOrange" ng-click="cancel()" >Cancel</button></td>
+            <td><button type="button" class="buttons" ng-model="id" id="textRed" ng-click="remove()">Remove</button></td>
+            
+        </tr>
+      </table>
+      <div class="container">
+        <div class="center">
+
+          <p align="center">
+      <h3 align="center">Filter By</h3>
+      <button ng-click="allapproved()" class="buttons">Pending</button>   
+      <button ng-click="allcanceled()" class="buttons">Delivered</button>
+    </div>
+</div>
+    </div>
+    </body>
+  
+</html>

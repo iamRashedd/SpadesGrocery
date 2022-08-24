@@ -44,9 +44,60 @@ namespace BLL.Services
             };
             return order;
         }
+        public static OrderDetailsModel DetailsById(int id)
+        {
+            var or = GetById(id);
+            var cus = CustomerService.GetByID(or.Customer_ID);
+            var emp = EmployeeService.GetById(or.Employee_ID);
+            var oPs = OrderedProductsService.GetById(or.Ordered_Products_ID);
+
+            var orderDetails = new OrderDetailsModel()
+            {
+                order = or,
+                customer = cus,
+                employee = emp,
+                orderedProducts = oPs,
+                products = new List<ProductModel>()
+            };
+            foreach(var p in oPs)
+            {
+                var p2 = ProductService.GetById(p.Product_ID);
+                orderDetails.products.Add(p2);
+            }
+            return orderDetails;
+        } 
+        public static List<OrderModel> AllApproved()
+        {
+            var data = GetAll().Where(x=>x.Status.Equals("Approved")).ToList();
+            return data;
+
+        }
+        public static List<OrderModel> AllCanceled()
+        {
+            var data = GetAll().Where(x => x.Status.Equals("Canceled")).ToList();
+            return data;
+
+        }
+        public static bool ApproveById(int id)
+        {
+            var data = GetById(id);
+            data.Status = "Approved";
+            return Update(data);
+        }
+        public static bool CancelById(int id)
+        {
+            var data = GetById(id);
+            data.Status = "Canceled";
+            return Update(data);
+        }
+        public static List<OrderModel> FilteredByDate(String id)
+        {
+            var data = GetAll().Where(x => x.Order_Date.ToString().StartsWith(id)).ToList();
+            return data;
+        }
         public static bool Create(OrderModel or)
         {
-            var data = new OrderModel()
+            var data = new Order()
             {
                 Order_ID = or.Order_ID,
                 Customer_ID = or.Customer_ID,
